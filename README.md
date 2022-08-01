@@ -14,6 +14,8 @@ The following is the Gitpod screenshot
 ##**Test Scenario**
 ##**Design Bug**
 Based on the above test input and analysing the design, we see the following
+```
+```
 
 ##**Design Fix**
 ##**Verification Stratergy**
