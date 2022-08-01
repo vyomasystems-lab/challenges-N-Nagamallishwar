@@ -1,5 +1,6 @@
 //Structural model:
 //Shift register
+
 //mux
 module mux(out,s0,s1,i0,i1,i2,i3);
     input s1,s0,i0,i1,i2,i3;
