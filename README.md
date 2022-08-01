@@ -7,11 +7,23 @@ The following is the Gitpod screenshot
 
 ##**Verification Environment**
 
-
-
-
+The CoCoTb based Python test is developed as explained. The test drives inputs to the Design Under Test (mux , sequential detector ,bit manipulator and universal shift register ) which takes in  inputs  and gives  output 
 
 ##**Test Scenario**
+###### Design1_level1
+Test Inputs: sel 5'b01101
+Expected Output: inp13
+Observed Output in the DUT inp12
+
+###### Design1_level2
+Here in the SEQ1 case has a bug. 
+
+###### Design2_level1
+Test Inputs: a=7 b=5
+Expected Output: sum=12
+Observed Output in the DUT dut.sum=2
+
+
 ##**Design Bug**
 Based on the above test input and analysing the design, we see the following
 ###### Design1_level1
@@ -53,11 +65,57 @@ Based on the above test input and analysing the design, we see the following
 ```
 ###### Design1_level2
 ```
+ always @(inp_bit or current_state)
+  begin
+    case(current_state)
+      IDLE:
+      begin
+        if(inp_bit == 1)
+          next_state = SEQ_1;
+        else
+          next_state = IDLE;
+      end
+      SEQ_1:
+      begin
+        if(inp_bit == 1)
+          next_state = IDLE;   ======>bug
+        else
+          next_state = SEQ_10; ======>bug
+      end
+      SEQ_10:
+      begin
+        if(inp_bit == 1)
+          next_state = SEQ_101;
+        else
+          next_state = IDLE;
+      end
+      SEQ_101:
+      begin
+        if(inp_bit == 1)
+          next_state = SEQ_1011;
+        else
+          next_state = IDLE;
+      end
+      SEQ_1011:
+      begin
+        next_state = IDLE;
+      end
+    endcase
 ```
 ###### Design2_level1
 ```
+
 ```
 
 ##**Design Fix**
+The fixed designs are unbuggied_mux.v
+                      unbuggied_seq_det.v
+                      unbuggied_mkbitmanip.v
+ The verilog code and testbench for Design of level 3 is in design3_level1                     
+
 ##**Verification Stratergy**
+Basically the verilog codes are thoroughly analysed and the test cases are written insuch way that it covers all cases of inputs and the outputs for that particular inputs are compared with the expected values.
+
+
 ##**Is the verification complete**
+As said in Verification Stratergy that we test all cases thus by this we conclude that the verification is complete.
