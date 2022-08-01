@@ -1,4 +1,4 @@
-#** Verification for CTB**
+# ** Verification for CTB**
 
 The verification environment is setup using Vyoma's UpTickPro provided for the hackathon.
 
