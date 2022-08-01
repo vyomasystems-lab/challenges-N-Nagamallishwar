@@ -25,6 +25,7 @@ Observed Output in the DUT dut.sum=2
 
 
 ##**Design Bug**
+
 Based on the above test input and analysing the design, we see the following
 ###### Design1_level1
 ```
@@ -108,14 +109,17 @@ Based on the above test input and analysing the design, we see the following
 ```
 
 ##**Design Fix**
+
 The fixed designs are unbuggied_mux.v
                       unbuggied_seq_det.v
                       unbuggied_mkbitmanip.v
  The verilog code and testbench for Design of level 3 is in design3_level1                     
 
 ##**Verification Stratergy**
+
 Basically the verilog codes are thoroughly analysed and the test cases are written insuch way that it covers all cases of inputs and the outputs for that particular inputs are compared with the expected values.
 
 
 ##**Is the verification complete**
+
 As said in Verification Stratergy that we test all cases thus by this we conclude that the verification is complete.
