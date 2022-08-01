@@ -1,5 +1,5 @@
 # challenges-N-Nagamallishwar
-challenges-N-Nagamallishwar created by GitHub Classroom
+
 The verification environment is setup using Vyoma's UpTickPro provided for the hackathon.
 
 The following is the Gitpod screenshot
